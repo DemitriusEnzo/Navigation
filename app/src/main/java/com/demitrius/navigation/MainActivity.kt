@@ -14,6 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavController
 import com.demitrius.navigation.screens.LoginScreen
 import com.demitrius.navigation.screens.MenuScreen
 import com.demitrius.navigation.screens.PedidosScreen
@@ -34,16 +35,16 @@ class MainActivity : ComponentActivity() {
                         startDestination = "login",
                     ) {
                         composable(route = "login") {
-                            LoginScreen(modifier = Modifier.padding(innerPadding))
+                            LoginScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "menu") {
-                            MenuScreen(modifier = Modifier.padding(innerPadding))
+                            MenuScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "pedidos") {
-                            PedidosScreen(modifier = Modifier.padding(innerPadding))
+                            PedidosScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                         composable(route = "perfil") {
-                            PerfilScreen(modifier = Modifier.padding(innerPadding))
+                            PerfilScreen(modifier = Modifier.padding(innerPadding), navController)
                         }
                     }
                 }
